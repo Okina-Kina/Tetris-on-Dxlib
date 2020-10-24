@@ -1,0 +1,45 @@
+#pragma once
+
+//*****************************************************
+// ÉuÉçÉbÉNÇÃäÓíÍ
+#include<DxLib.h>
+#include<array>
+using std::array;
+
+class Block
+{
+private:
+	static const int s_scale = 32;
+
+	int _x, _y;
+	int _color;
+	int _rot;
+
+
+protected:
+	static const int s_size = 4;
+
+	array<array < int, s_size>, s_size> _shapeData;
+
+	//*************************************************
+	// method
+	virtual void initShape() = 0;
+
+public:
+	//*************************************************
+	// constructor
+	Block(int x, int y, int rot, int color);
+
+	//*************************************************
+	// method
+	void turn();
+	void turnLeft();
+	void turnRight();
+	void draw();
+
+	//*************************************************
+	// setter
+	void setPosition(int x, int y);
+
+};
+

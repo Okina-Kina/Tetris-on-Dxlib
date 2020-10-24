@@ -1,0 +1,12 @@
+#pragma once
+#include"Block.h"
+
+class BlockL : public Block
+{
+protected:
+	void initShape() override;
+
+public:
+	BlockL(int x, int y, int rot);
+};
+
