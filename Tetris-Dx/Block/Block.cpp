@@ -1,7 +1,7 @@
 #include "Block.h"
 
 //----------------------------------------------------------------
-Block::Block(int x, int y, int rot, int color) :
+Block::Block(int color) :
 	_x(), _y(), _rot(), _color(color), _shapeData({}) {}
 //----------------------------------------------------------------
 void Block::turn() {
@@ -22,3 +22,8 @@ void Block::draw() {
 			DrawBox(_x, _y, (_x + s_scale), (_y + s_scale), _color, true);
 }
 //----------------------------------------------------------------
+void Block::setup(int x, int y, int rot) {
+	_x = x;
+	_y = y;
+	_rot = rot;
+}

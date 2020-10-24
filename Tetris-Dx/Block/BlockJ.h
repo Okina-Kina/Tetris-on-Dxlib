@@ -6,6 +6,6 @@ protected:
 	void initShape() override;
 
 public:
-	BlockJ(int x, int y, int rot);
+	BlockJ();
 };
 

@@ -7,6 +7,6 @@ protected:
 	void initShape() override;
 
 public:
-	BlockO(int x, int y, int rot);
+	BlockO();
 };
 

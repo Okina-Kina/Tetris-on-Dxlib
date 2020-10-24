@@ -28,7 +28,7 @@ protected:
 public:
 	//*************************************************
 	// constructor
-	Block(int x, int y, int rot, int color);
+	Block(int color);
 
 	//*************************************************
 	// method
@@ -39,7 +39,6 @@ public:
 
 	//*************************************************
 	// setter
-	void setPosition(int x, int y);
-
+	void setup(int x, int y, int rot);
 };
 
