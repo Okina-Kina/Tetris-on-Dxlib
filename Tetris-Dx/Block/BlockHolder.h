@@ -2,13 +2,13 @@
 
 //*****************************************************
 // 各種ブロックを持つクラス
-#include"Block/BlockI.h"
-#include"Block/BlockJ.h"
-#include"Block/BlockL.h"
-#include"Block/BlockO.h"
-#include"Block/BlockS.h"
-#include"Block/BlockT.h"
-#include"Block/BlockZ.h"
+#include"BlockI.h"
+#include"BlockJ.h"
+#include"BlockL.h"
+#include"BlockO.h"
+#include"BlockS.h"
+#include"BlockT.h"
+#include"BlockZ.h"
 
 #include<typeinfo>
 #include<memory>
