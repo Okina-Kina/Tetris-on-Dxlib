@@ -15,6 +15,10 @@ private:
 	int _x, _y;
 	array<array<int, s_width>, s_height> _field;
 
+	//*****************************************************
+	// method
+	void initField();
+
 public:
 	//*****************************************************
 	// constructor
@@ -22,7 +26,6 @@ public:
 
 	//*****************************************************
 	// method
-	void initField();
 	void draw();
 };
 
