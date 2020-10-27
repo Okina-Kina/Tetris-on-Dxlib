@@ -28,10 +28,10 @@ bool GameManager::isBlockMovable(int x, int y) {
 	return true;
 }
 //----------------------------------------------------------------
-bool GameManager::isBlockRotatable(const shared_ptr<Block> block) {
+bool GameManager::isBlockRotatable(const shared_ptr<Block> block, int rot) {
 
 	const auto rotateBlock = block;
-	rotateBlock->addRotate(_vr);
+	rotateBlock->addRotate(rot);
 	DrawFormatString(0, 192, GetColor(255, 255, 255), "rot:%d", rotateBlock->getRotation());
 
 	rotateBlock->turn();
@@ -67,23 +67,22 @@ void GameManager::moveBlock() {
 
 	if (Input::inputKey(KEY_INPUT_DOWN))_vy++;
 
-	if (Input::inputKey(KEY_INPUT_Q)) _vr--;
-	else if (Input::inputKey(KEY_INPUT_E)) _vr++;
+	if (Input::inputKey(KEY_INPUT_Q)) _vr = -1;
+	else if (Input::inputKey(KEY_INPUT_E)) _vr = 1;
 	else _vr = 0;
 
 	if (isBlockMovable(_vx, _vy)) {
 		_block->addX(_vx);
 		_block->addY(_vy);
 	}
-
-	if (_vr != 0 && isBlockRotatable(_block)) {
-		_block->addRotate(_vr);
-		_block->turn();
+	if (isBlockRotatable(_block, _vr)) {
+		DrawFormatString(0, 96, GetColor(255, 255, 255), "isRotatable: true"); _block->turn();
 	}
+	else DrawFormatString(0, 96, GetColor(255, 255, 255), "isRotatable: false");
+
 
 	DrawFormatString(0, 32, GetColor(255, 255, 255), "pos: x:%d/y:%d", _block->getX(), _block->getY());
 	DrawFormatString(0, 64, GetColor(255, 255, 255), "rotate: %d", _block->getRotation());
-	DrawFormatString(0, 96, GetColor(255, 255, 255), "isRotate: %d", isBlockRotatable(_block));
 	DrawFormatString(0, 128, GetColor(255, 255, 255), "isMovable: %d", isBlockMovable(_vx, _vy));
 	DrawFormatString(0, 160, GetColor(255, 255, 255), "vx:%d/vy:%d", _vx, _vy);
 

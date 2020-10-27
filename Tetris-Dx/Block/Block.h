@@ -19,7 +19,7 @@ private:
 
 
 protected:
-	static const int s_size = 4;
+	static const int s_size = 5;
 
 	array<array < int, s_size>, s_size> _shapeData;
 	array<array < int, s_size>, s_size> _currentShape;

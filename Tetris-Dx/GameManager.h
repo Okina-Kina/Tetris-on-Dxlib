@@ -21,7 +21,7 @@ private:
 
 	void moveBlock();
 	bool isBlockMovable(int x, int y);
-	bool isBlockRotatable(const shared_ptr<Block> block);
+	bool isBlockRotatable(const shared_ptr<Block> block, int rot);
 	void dropBlock();
 
 public:
