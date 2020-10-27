@@ -151,7 +151,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Block\BlockHolder.cpp" />
+    <ClCompile Include="Block\BlockT.cpp" />
+    <ClCompile Include="Block\BlockZ.cpp" />
+    <ClCompile Include="Block\BlockS.cpp" />
+    <ClCompile Include="Block\BlockO.cpp" />
+    <ClCompile Include="Block\BlockL.cpp" />
+    <ClCompile Include="Block\BlockJ.cpp" />
+    <ClCompile Include="Block\BlockI.cpp" />
+    <ClCompile Include="Block\Block.cpp" />
+    <ClCompile Include="Field\Field.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Block\BlockHolder.h" />
+    <ClInclude Include="Block\BlockT.h" />
+    <ClInclude Include="Block\BlockZ.h" />
+    <ClInclude Include="Block\BlockS.h" />
+    <ClInclude Include="Block\BlockO.h" />
+    <ClInclude Include="Block\BlockL.h" />
+    <ClInclude Include="Block\BlockJ.h" />
+    <ClInclude Include="Block\BlockI.h" />
+    <ClInclude Include="Block\Block.h" />
+    <ClInclude Include="Field\Field.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
