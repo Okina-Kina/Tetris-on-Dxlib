@@ -1,7 +1,7 @@
 #include "BlockHolder.h"
 
 //--------------------------------------------------------------------------------------
-BlockHolder::BlockHolder() {
+BlockHolder::BlockHolder(int x, int y) :_offsetX(x), _offsetY(y) {
 	_blockTable.insert(make_pair(0, new BlockI()));
 	_blockTable.insert(make_pair(1, new BlockO()));
 	_blockTable.insert(make_pair(2, new BlockT()));
@@ -13,6 +13,7 @@ BlockHolder::BlockHolder() {
 //--------------------------------------------------------------------------------------
 shared_ptr<Block> BlockHolder::getBlock(int hundle, int x, int y, int rot) {
 	auto&& block = _blockTable.at(hundle);
-	block->setup(x, y, rot);
-	return _blockTable[hundle];
+	block->setup(
+		_offsetX + (x * block->getScale()), _offsetY + (y * block->getScale()), rot);
+	return block;
 }

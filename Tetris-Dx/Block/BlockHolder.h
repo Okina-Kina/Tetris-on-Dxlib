@@ -21,11 +21,12 @@ using std::shared_ptr;
 class BlockHolder
 {
 private:
+	int _offsetX, _offsetY;
 	map<int, shared_ptr<Block>> _blockTable;
 
 public:
-	BlockHolder();
-	
+	BlockHolder(int x, int y);
+
 	//*****************************************************
 	// getter
 	shared_ptr<Block> getBlock(int hundle, int x, int y, int rot);

@@ -20,6 +20,7 @@ protected:
 	static const int s_size = 4;
 
 	array<array < int, s_size>, s_size> _shapeData;
+	array<array < int, s_size>, s_size> _currentShape;
 
 	//*************************************************
 	// method
@@ -37,6 +38,9 @@ public:
 	void turnRight();
 	void draw();
 
+	//*************************************************
+	// setter
+	int getScale();
 	//*************************************************
 	// setter
 	void setup(int x, int y, int rot);

@@ -1,6 +1,5 @@
 #include "DxLib.h"
-#include"Field/Field.h"
-#include"Input/Input.h"
+#include"GameManager.h"
 
 int initDxLib() {
 	// ウィンドウモードに設定
@@ -21,18 +20,19 @@ int initDxLib() {
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 	initDxLib();
-	auto&& field = Field(400, 32);
+	auto&& gameMgr = GameManager();
+
+	gameMgr.setup();
 
 	// while(裏画面を表画面に反映, メッセージ処理, 画面クリア)
 	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0) {
 
 		DrawFormatString(0, 0, GetColor(255, 255, 255), "ESCキーで終了します");
 
-		Input::updateKeyState();
-
 		if (CheckHitKey(KEY_INPUT_ESCAPE) != 0) break;
 
-		field.draw();
+		gameMgr.update();
+
 	}
 
 	DxLib_End();    // DXライブラリ終了処理
