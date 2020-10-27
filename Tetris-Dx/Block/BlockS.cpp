@@ -1,7 +1,7 @@
 #include "BlockS.h"
 
 //--------------------------------------------------------------------------------------
-BlockS::BlockS() :Block(GetColor(5, 145, 255)) {
+BlockS::BlockS(int offsetX, int offsetY) :Block(offsetX, offsetY, GetColor(5, 145, 255)) {
 	initShape();
 }
 //--------------------------------------------------------------------------------------

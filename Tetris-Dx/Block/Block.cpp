@@ -1,8 +1,9 @@
 #include "Block.h"
 
 //----------------------------------------------------------------
-Block::Block(int color) :
-	_x(), _y(), _rot(), _color(color), _shapeData({}), _currentShape({ }) {}
+Block::Block(int offsetX, int offsetY, int color) :
+	_x(), _y(), _offsetX(offsetX), _offsetY(offsetY),
+	_rot(), _color(color), _shapeData({}), _currentShape({ }) {}
 //----------------------------------------------------------------
 void Block::turn() {
 	auto rot = (40000000 + _rot) % 4;
@@ -32,20 +33,27 @@ void Block::draw() {
 
 		if (_currentShape[i][j] != 0) {
 
-			auto&& x = _x + (j * s_scale);
-			auto&& y = _y + (i * s_scale);
+			auto&& x = ((_x + j) * s_scale) + _offsetX;
+			auto&& y = ((_y + i) * s_scale) + _offsetY;
 
 			DrawBox(x, y, x + s_scale, y + s_scale, _color, true);
+			DrawFormatString(x, y, GetColor(255, 255, 255), "%d", 1);
 		}
 }
 //----------------------------------------------------------------
+// getter
 int Block::getScale() { return s_scale; }
+array<array<int, Block::s_size>, Block::s_size> Block::getShape() { return _currentShape; }
+int Block::getX() { return _x; }
+int Block::getY() { return _y; }
 //----------------------------------------------------------------
+// setter
 void Block::setup(int x, int y, int rot) {
 	_x = x;
 	_y = y;
 	_rot = rot;
-
 	turn();
 }
+void Block::setX(int x) { _x = x; }
+void Block::setY(int y) { _y = y; }
 //----------------------------------------------------------------

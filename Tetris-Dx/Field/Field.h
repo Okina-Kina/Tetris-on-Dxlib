@@ -26,6 +26,14 @@ public:
 
 	//*****************************************************
 	// method
+	bool isOutOfFieldIndex(int x, int y);
+
 	void draw();
+
+	//*****************************************************
+	// getter
+	array<array<int, s_width>, s_height> getField();
+	int getFieldWidth();
+	int getFieldHeight();
 };
 

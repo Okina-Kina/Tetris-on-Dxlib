@@ -1,7 +1,7 @@
 #include "BlockL.h"
 
 //--------------------------------------------------------------------------------------
-BlockL::BlockL(): Block(GetColor(255, 200, 145)) {
+BlockL::BlockL(int offsetX, int offsetY) : Block(offsetX, offsetY, GetColor(255, 200, 145)) {
 	initShape();
 }
 //--------------------------------------------------------------------------------------

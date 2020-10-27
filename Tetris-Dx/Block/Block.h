@@ -12,6 +12,8 @@ private:
 	static const int s_scale = 32;
 
 	int _x, _y;
+	int _offsetX, _offsetY;
+
 	int _color;
 	int _rot;
 
@@ -29,20 +31,29 @@ protected:
 public:
 	//*************************************************
 	// constructor
-	Block(int color);
+	Block(int offsetX, int offsetY, int color);
 
 	//*************************************************
 	// method
 	void turn();
 	void turnLeft();
 	void turnRight();
+	//-------------------------------------------------
 	void draw();
 
 	//*************************************************
-	// setter
+	// getter
 	int getScale();
+	int getSize();
+	array<array<int, s_size>, s_size> getShape();
+	int getX();
+	int getY();
+
 	//*************************************************
 	// setter
-	void setup(int x, int y, int rot);
+	void setX(int x);
+	void setY(int y);
+
+	void setup(int offsetX, int offsetY, int rot);
 };
 
