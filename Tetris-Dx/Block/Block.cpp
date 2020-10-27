@@ -3,7 +3,7 @@
 //----------------------------------------------------------------
 Block::Block(int offsetX, int offsetY, int color) :
 	_x(), _y(), _offsetX(offsetX), _offsetY(offsetY),
-	_rot(), _color(color), _shapeData({}), _currentShape({ }) {}
+	_rot(0), _color(color), _shapeData({}), _currentShape({ }) {}
 //----------------------------------------------------------------
 void Block::turn() {
 	auto rot = (40000000 + _rot) % 4;
@@ -24,10 +24,6 @@ void Block::turn() {
 	}
 }
 //----------------------------------------------------------------
-void Block::turnLeft() { _rot--; turn(); }
-//----------------------------------------------------------------
-void Block::turnRight() { _rot++; turn(); }
-//----------------------------------------------------------------
 void Block::draw() {
 	for (int i = 0; i < s_size; i++)for (int j = 0; j < s_size; j++)
 
@@ -46,6 +42,7 @@ int Block::getScale() { return s_scale; }
 array<array<int, Block::s_size>, Block::s_size> Block::getShape() { return _currentShape; }
 int Block::getX() { return _x; }
 int Block::getY() { return _y; }
+int Block::getRotation() { return _rot; }
 //----------------------------------------------------------------
 // setter
 void Block::setup(int x, int y, int rot) {
@@ -54,6 +51,7 @@ void Block::setup(int x, int y, int rot) {
 	_rot = rot;
 	turn();
 }
-void Block::setX(int x) { _x = x; }
-void Block::setY(int y) { _y = y; }
+void Block::addX(int x) { _x += x; }
+void Block::addY(int y) { _y += y; }
+void Block::addRotate(int rot) { _rot += rot; }
 //----------------------------------------------------------------

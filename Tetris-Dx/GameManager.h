@@ -13,17 +13,15 @@ private:
 	Field _field;
 	shared_ptr<Block> _block;
 	int _vx, _vy;
+	int _vr;
 
 	shared_ptr<Block> createNewBlock(int blockId, int x, int y, int rot);
 
 	//----------------------------------------------------------------
 
-	void controllBlock();
-
 	void moveBlock();
-
 	bool isBlockMovable(int x, int y);
-
+	bool isBlockRotatable(const shared_ptr<Block> block);
 	void dropBlock();
 
 public:

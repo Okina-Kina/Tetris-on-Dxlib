@@ -36,23 +36,20 @@ public:
 	//*************************************************
 	// method
 	void turn();
-	void turnLeft();
-	void turnRight();
-	//-------------------------------------------------
 	void draw();
-
 	//*************************************************
 	// getter
 	int getScale();
-	int getSize();
 	array<array<int, s_size>, s_size> getShape();
+	int getRotation();
 	int getX();
 	int getY();
 
 	//*************************************************
 	// setter
-	void setX(int x);
-	void setY(int y);
+	void addX(int x);
+	void addY(int y);
+	void addRotate(int rot);
 
 	void setup(int offsetX, int offsetY, int rot);
 };
