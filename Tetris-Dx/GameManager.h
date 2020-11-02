@@ -5,24 +5,33 @@
 #include"Block/BlockHolder.h"
 #include"Field/Field.h"
 #include"Input/Input.h"
+#include<vector>
+
+using std::vector;
+using std::unique_ptr;
 
 class GameManager
 {
 private:
+	int _interval, _count;
 	BlockHolder _blockHolder;
 	Field _field;
-	shared_ptr<Block> _block;
+
+	Block _block;
+
 	int _vx, _vy;
 	int _vr;
 
-	shared_ptr<Block> createNewBlock(int blockId, int x, int y, int rot);
-
 	//----------------------------------------------------------------
-
+	// Method
+	Block* createNewBlock(int blockId, int x, int y, int rot);
 	void moveBlock();
-	bool isBlockMovable(int x, int y);
-	bool isBlockRotatable(const shared_ptr<Block> block, int rot);
 	void dropBlock();
+	void saveField();
+
+	bool isBlockMovable(int x, int y);
+	bool isBlockDroppable(int x, int y);
+	bool isBlockRotatable(const Block* block, int rot);
 
 public:
 	GameManager();

@@ -26,13 +26,12 @@ protected:
 
 	//*************************************************
 	// method
-	virtual void initShape() = 0;
+	virtual void initShape(){}
 
 public:
 	//*************************************************
 	// constructor
 	Block(int offsetX, int offsetY, int color);
-
 	//*************************************************
 	// method
 	void turn();

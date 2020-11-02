@@ -27,13 +27,19 @@ public:
 	//*****************************************************
 	// method
 	bool isOutOfFieldIndex(int x, int y);
+	bool isFilled(int y);
 
 	void draw();
+	void clearLine();
 
 	//*****************************************************
 	// getter
 	array<array<int, s_width>, s_height> getField();
 	int getFieldWidth();
 	int getFieldHeight();
+	//*****************************************************
+	// setter
+	void setBlockIndex(int x, int y);
+
 };
 

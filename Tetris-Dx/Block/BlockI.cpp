@@ -6,6 +6,6 @@ BlockI::BlockI(int offsetX, int offsetY) :Block(offsetX, offsetY, GetColor(100, 
 }
 //--------------------------------------------------------------------------------------
 void BlockI::initShape() {
-	for (auto&& i = 0; i < s_size; i++)	_shapeData[1][i] = 1;
+	for (auto&& i = 1; i < s_size; i++)	_shapeData[1][i] = 1;
 }
 //--------------------------------------------------------------------------------------

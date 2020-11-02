@@ -2,7 +2,7 @@
 
 //----------------------------------------------------------------
 Block::Block(int offsetX, int offsetY, int color) :
-	_x(), _y(), _offsetX(offsetX), _offsetY(offsetY),
+	_x(0), _y(0), _offsetX(offsetX), _offsetY(offsetY),
 	_rot(0), _color(color), _shapeData({}), _currentShape({ }) {}
 //----------------------------------------------------------------
 void Block::turn() {
@@ -33,6 +33,7 @@ void Block::draw() {
 			auto&& y = ((_y + i) * s_scale) + _offsetY;
 
 			DrawBox(x, y, x + s_scale, y + s_scale, _color, true);
+			DrawBox(x, y, x + s_scale, y + s_scale, GetColor(0, 0, 0), false);
 			DrawFormatString(x, y, GetColor(255, 255, 255), "%d", 1);
 		}
 }

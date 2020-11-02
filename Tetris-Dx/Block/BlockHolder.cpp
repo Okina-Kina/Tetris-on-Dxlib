@@ -11,9 +11,9 @@ BlockHolder::BlockHolder(int x, int y) :_offsetX(x), _offsetY(y) {
 	_blockTable.insert(make_pair(6, new BlockZ(_offsetX, _offsetY)));
 }
 //--------------------------------------------------------------------------------------
-shared_ptr<Block> BlockHolder::getBlock(int hundle, int x, int y, int rot) {
+Block& BlockHolder::getBlock(int hundle, int x, int y, int rot)const {
 	auto&& block = _blockTable.at(hundle);
 	block->setup(x, y, rot);
-	return block;
+	return *(block.get());
 }
 //--------------------------------------------------------------------------------------
