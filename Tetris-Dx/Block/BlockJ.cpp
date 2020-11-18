@@ -1,7 +1,7 @@
 #include "BlockJ.h"
 
 //--------------------------------------------------------------------------------------
-BlockJ::BlockJ() :Block(GetColor(5, 145, 255)) {
+BlockJ::BlockJ(int offsetX, int offsetY) :Block(offsetX, offsetY, GetColor(5, 145, 255)) {
 	initShape();
 }
 //--------------------------------------------------------------------------------------

@@ -6,6 +6,6 @@ protected:
 	void initShape() override;
 
 public:
-	BlockZ();
+	BlockZ(int offsetX, int offsetY);
 };
 

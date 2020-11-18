@@ -1,7 +1,7 @@
 #include "BlockZ.h"
 
 //--------------------------------------------------------------------------------------
-BlockZ::BlockZ():Block(GetColor(255, 145, 145)) {
+BlockZ::BlockZ(int offsetX, int offsetY) :Block(offsetX, offsetY, GetColor(255, 145, 145)) {
 	initShape();
 }
 //--------------------------------------------------------------------------------------

@@ -161,6 +161,7 @@
     <ClCompile Include="Block\BlockI.cpp" />
     <ClCompile Include="Block\Block.cpp" />
     <ClCompile Include="Field\Field.cpp" />
+    <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Input\Input.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -175,6 +176,7 @@
     <ClInclude Include="Block\BlockI.h" />
     <ClInclude Include="Block\Block.h" />
     <ClInclude Include="Field\Field.h" />
+    <ClInclude Include="GameManager.h" />
     <ClInclude Include="Input\Input.h" />
     <ClInclude Include="Input\InputType.h" />
   </ItemGroup>

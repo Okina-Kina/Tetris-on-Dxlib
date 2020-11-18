@@ -17,17 +17,19 @@
 using std::map;
 using std::make_pair;
 using std::shared_ptr;
+using std::unique_ptr;
 
 class BlockHolder
 {
 private:
-	map<int, shared_ptr<Block>> _blockTable;
+	int _offsetX, _offsetY;
+	map<int, unique_ptr<Block>> _blockTable;
 
 public:
-	BlockHolder();
-	
+	BlockHolder(int x, int y);
+
 	//*****************************************************
 	// getter
-	shared_ptr<Block> getBlock(int hundle, int x, int y, int rot);
+	Block& getBlock(int hundle, int x, int y, int rot) const;
 };
 

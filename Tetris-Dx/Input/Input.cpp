@@ -17,6 +17,8 @@ void Input::updateKeyState() {
 	}
 }
 //--------------------------------------------------------------------------------------
+bool Input::notInputKey(int keyCode) { return s_keyFlag[keyCode] == InputType::None; }
+//--------------------------------------------------------------------------------------
 bool Input::inputKey(int keyCode) { return s_keyFlag[keyCode] == InputType::Inputed; }
 //--------------------------------------------------------------------------------------
 bool Input::inputDownKey(int keyCode) { return s_keyFlag[keyCode] == InputType::Down; }
