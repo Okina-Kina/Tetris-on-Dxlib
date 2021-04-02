@@ -36,7 +36,7 @@ void Field::clearLine() {
 		if (!isFilled(i)) continue;
 		for (int j = 1; j < s_width - 1; j++) _field[i][j] = 0;
 
-		for (int k = s_height - 1; k > 0; k--)for (int j = 1; j < s_width - 1; j++)
+		for (int k = i; k > 0; k--)for (int j = 1; j < s_width - 1; j++)
 			_field[k][j] = _field[k - 1][j];
 	}
 }
